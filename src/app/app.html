@@ -1,0 +1,67 @@
+
+
+<div class="panel panel-danger">
+	<div class="panel-heading">Pie Chart With Dynamic Data</div>
+	<div class="panel-body">
+
+		<h1></h1>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-success">
+					<div class="panel-heading">Add Data</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label for="dataLabel">Parameter : </label> <input
+								class="form-control" type="text" name="dataLabel"
+								[(ngModel)]="newLabel" />
+						</div>
+						<div class="form-group">
+							<label for="dataValue">Value : </label> <input
+								class="form-control" type="number" name="dataValue"
+								[(ngModel)]="newValue" />
+						</div>
+						<button (click)="addData()" class="btn btn-danger">Add
+							Data</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-warning">
+					<div class="panel-heading">List Data</div>
+					<div class="panel-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="success text-primary">
+									<td>Parameter</td>
+									<td>Value</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let d of data" class="info text-danger">
+									<td [innerHTML]="d.label"></td>
+									<td [innerHTML]="d.value"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-8" style="width: 300px; height: 300px;">
+				<div class="panel panel-info">
+					<div class="panel-heading">Pie Chart</div>
+					<div class="panel-body">
+						<pie-chart></pie-chart>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		   <div class="col-md-4">&nbsp;</div>
+		</div>
+	</div>
+
+</div>
